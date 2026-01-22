@@ -37,8 +37,8 @@ fun Route.courtCaseRoutes(service: CourtCaseService) {
             call.respond(service.updateCase(dto))
         }
 
-        delete("/{id}") {
-            val id = call.parameters["id"] ?: return@delete call.respond(
+        delete {
+            val id = call.request.queryParameters["id"] ?: return@delete call.respond(
                 HttpStatusCode.BadRequest, ApiResponse<Unit>(false, "Broj predmeta nedostaje")
             )
             call.respond(service.deleteCase(id))

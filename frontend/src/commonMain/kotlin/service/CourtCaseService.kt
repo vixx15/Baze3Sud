@@ -53,7 +53,9 @@ class CourtCaseService(private val client: HttpClient = httpClient) {
 
     suspend fun deleteCase(id: String): ApiResponse<Unit> {
         return try {
-            client.delete("cases/$id").body()
+            client.delete("cases"){
+                parameter("id", id)
+            }.body()
         } catch (e: Exception) {
             ApiResponse(false, "Greška pri brisanju: ${e.localizedMessage}")
         }
