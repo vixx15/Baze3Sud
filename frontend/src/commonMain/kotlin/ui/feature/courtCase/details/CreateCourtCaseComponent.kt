@@ -38,7 +38,7 @@ fun CreateCourtCaseComponent(
         CustomTextField(
             isPK = true,
             contentMode = mode,
-            value = courtCaseDetailsDTO.id?:"",
+            value = courtCaseDetailsDTO.id ?: "",
             onValueChange = { updateCourtCase(it, null, null, null, null) },
             label = "Broj predmeta",
             singleLine = true,
@@ -47,7 +47,7 @@ fun CreateCourtCaseComponent(
         CustomTextField(
             isPK = false,
             contentMode = mode,
-            value = courtCaseDetailsDTO.value.toString(),
+            value = courtCaseDetailsDTO.value?.toString() ?: "",
             onValueChange = { updateCourtCase(null, it.toDoubleOrNull() ?: 0.0, null, null, null) },
             label = "Vrednost spora",
             singleLine = true,
@@ -58,7 +58,7 @@ fun CreateCourtCaseComponent(
             contentMode = mode,
             isPK = false,
             options = diputeTypeOptions,
-            optionLabel = { it.name?:"" },
+            optionLabel = { it.name ?: "" },
             expanded = expandedType,
             menuLabel = "Vrsta spora",
             selectedOption = courtCaseDetailsDTO.type,

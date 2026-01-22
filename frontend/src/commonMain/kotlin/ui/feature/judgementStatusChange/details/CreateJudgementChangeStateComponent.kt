@@ -38,7 +38,7 @@ fun CreateJudgementChangeStateComponent(
             contentMode = mode,
             isPK = true,
             options = judgmentOptions,
-            optionLabel = { "Presuda za predmet ${it.caseID} dana ${it.date.toFormattedDate()}" },
+            optionLabel = { "Presuda ${it.id} za predmet ${it.caseID} dana ${it.date.toFormattedDate()}" },
             expanded = expandedJudgement,
             menuLabel = "Presuda",
             selectedOption = judgementStatusChangeDetailsDTO.judgement,

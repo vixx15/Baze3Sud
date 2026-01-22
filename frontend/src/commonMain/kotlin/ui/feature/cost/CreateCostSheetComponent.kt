@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
@@ -130,20 +131,24 @@ fun CreateCostSheetComponent(
 
             HorizontalDivider(modifier = Modifier.fillMaxWidth())
 
-            details?.items?.forEach {
-                CostItem(
-                    Modifier.padding(vertical = 4.dp), it,
-                    delete = { it.ordinalId?.let { ordinal -> vm.deleteItem(ordinal) } },
-                    edit = {
-                        itemPopupVisible = true
-                        vm.updateItemMode(ContentMode.EDIT, it)
-                    },
-                    allowEdit = mode != ContentMode.OVERVIEW,
-                )
+            LazyColumn(Modifier.fillMaxWidth().height(300.dp)) {
+                details?.items?.forEach {
+                    item {
+                        CostItem(
+                            Modifier.padding(vertical = 4.dp), it,
+                            delete = { it.ordinalId?.let { ordinal -> vm.deleteItem(ordinal) } },
+                            edit = {
+                                itemPopupVisible = true
+                                vm.updateItemMode(ContentMode.EDIT, it)
+                            },
+                            allowEdit = mode != ContentMode.OVERVIEW,
+                        )
+                    }
+                }
             }
             Spacer(Modifier.height(16.dp).fillMaxWidth())
-            if(mode!= ContentMode.OVERVIEW)
-            Button(onClick = { vm.upsert() }, modifier = Modifier.Companion.fillMaxWidth()) { Text("Potvrdi") }
+            if (mode != ContentMode.OVERVIEW)
+                Button(onClick = { vm.upsert() }, modifier = Modifier.Companion.fillMaxWidth()) { Text("Potvrdi") }
         }
 
 
