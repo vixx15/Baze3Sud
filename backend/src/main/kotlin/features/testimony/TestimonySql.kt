@@ -1,4 +1,4 @@
-package com.baze3.testimony
+package com.baze3.features.testimony
 
 object TestimonySql {
     const val TABLE = "SVEDOCENJE SV"

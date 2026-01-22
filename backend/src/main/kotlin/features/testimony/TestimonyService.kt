@@ -1,4 +1,4 @@
-package com.baze3.testimony
+package com.baze3.features.testimony
 
 import com.baze3.models.ApiResponse
 import com.baze3.common.db.DbResult
@@ -47,7 +47,6 @@ class TestimonyService(private val repository: TestimonyRepository) {
                 else ApiResponse(false, "Nijedan red nije izmenjen (proverite ključeve)")
             }
             is DbResult.Error -> {
-                // This 'message' now contains the Oracle Trigger or Constraint error
                 ApiResponse(false, result.message)
             }
         }

@@ -1,4 +1,4 @@
-package com.baze3.testimony
+package com.baze3.features.testimony
 
 import com.baze3.features.hering.HearingEntity
 import com.baze3.features.witness.WitnessEntity

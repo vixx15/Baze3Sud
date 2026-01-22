@@ -1,4 +1,4 @@
-package com.baze3.testimony
+package com.baze3.features.testimony
 
 import com.baze3.models.ApiResponse
 import com.baze3.models.TestimonyDTO

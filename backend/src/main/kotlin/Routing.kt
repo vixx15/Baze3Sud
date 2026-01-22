@@ -31,9 +31,9 @@ import com.baze3.features.judgmentStatusChange.judgementStatusChangeRoutes
 import com.baze3.features.witness.WitnessRepository
 import com.baze3.features.witness.WitnessService
 import com.baze3.features.witness.witnessRoutes
-import com.baze3.testimony.TestimonyRepository
-import com.baze3.testimony.TestimonyService
-import com.baze3.testimony.testimonyRoutes
+import com.baze3.features.testimony.TestimonyRepository
+import com.baze3.features.testimony.TestimonyService
+import com.baze3.features.testimony.testimonyRoutes
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 
