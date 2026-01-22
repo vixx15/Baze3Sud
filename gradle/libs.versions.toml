@@ -1,0 +1,43 @@
+[versions]
+kotlin = "2.2.0"
+
+ktor-ver = "2.3.13"
+logback = "1.4.14"
+oracle = "23.4.0.0"
+hiakari-ver="5.0.1"
+serialization-lib = "1.7.0"
+
+compose = "1.10.0"
+precompose = "1.6.0"
+androidx-lifecycle = "2.8.2"
+kotlinx-coroutines = "1.10.2"
+
+[libraries]
+ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor-ver" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor-ver" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor-ver" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor-ver" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor-ver" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor-ver" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-ver" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-ver" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor-ver" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor-ver" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-ver" }
+oracle-jdbc = { module = "com.oracle.database.jdbc:ojdbc11", version.ref = "oracle" }
+hiakari = { module = "com.zaxxer:HikariCP", version.ref = "hiakari-ver" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization-lib" }
+precompose = { module = "moe.tlaster:precompose", version.ref = "precompose" }
+androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor-ver" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
